@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>Update Username</title>
+</head>
+<body>
+    <main>
+        <form method="POST" th:action="@{/users/update}">
+            <fieldset>
+                <legend>Update Username</legend>
+                <div class="update-form-grid">
+                    <div>ID</div>
+                    <div>:</div>
+                    <div><input type="text" name="id"></div>
+                    <div>New Username</div>
+                    <div>:</div>
+                    <div><input type="text" name="username"></div>
+                </div>
+                <input type="submit" value="UPDATE" name="updateUsername">
+            </fieldset>
+        </form>
+        <br>
+        <a th:href="@{/users/}">HOME</a>
+        <div th:if="${userID != null and username != null}">
+            <hr>
+            Username for ID <span th:text="${userID}"></span> is updated<br>
+            New username: <span th:text="${username}"></span>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout (title, content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">T06</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <h1>IDE</h1>
+        <nav>
+            <a th:href="@{/users/}">USER</a>
+            <a th:href="@{/users/update}">UPDATE USERNAME</a>
+            <a th:href="@{/userGroups/}">ROLE</a>
+        </nav>
+    </header>
+    <br>
+    <hr>
+    <main th:replace="${content}">
+        <p>Page content goes here</p>
+    </main>
+    <hr>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>

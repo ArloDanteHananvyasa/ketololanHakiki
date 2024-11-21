@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>User Group</title>
+</head>
+<body>
+  <main>
+    <table>
+      <tr>
+        <th>Role</th>
+      </tr>
+      <tr th:each="role : ${roles}">
+        <td th:text="${role.name}"></td>
+      </tr>
+    </table>
+    <hr>
+    <th:block th:include="~{usergroups/add :: addNewRole}"></th:block>
+    <br>
+    <a th:href="@{/users/}">HOME</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div th:fragment="searchMenu">
+    <form method="GET" th:action="@{/users/}">
+        <fieldset>
+            <legend>Search by Name</legend>
+            <input type="text" name="filter" th:value="${filter}">
+            <input type="hidden" name="page" th:if="${currentPage} != null" th:value="${currentPage}" />
+            <input type="submit" value="SEARCH">
+        </fieldset>
+    </form>
+    <br>
+</div>

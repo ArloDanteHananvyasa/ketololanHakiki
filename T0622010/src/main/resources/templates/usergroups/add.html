@@ -1,0 +1,9 @@
+<div th:fragment="addNewRole">
+    <form method="POST" th:action="@{/userGroups/add}">
+        <fieldset>
+            <legend>Add New Role</legend>
+            <input type="text" name="name">
+            <input type="submit" value="ADD" name="addNewRole">
+        </fieldset>
+    </form>
+</div>

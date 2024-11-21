@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html th:replace="~{layout/layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>User</title>
+</head>
+<body>
+    <main>
+        <th:block th:include="~{users/search :: searchMenu}"></th:block>
+        <hr>
+        <th:block th:include="~{/layout/pagination :: pagination}"></th:block>
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+            <tr th:each="row : ${results}">
+                <td th:text="${row.userId}"></td>
+                <td th:text="${row.name}"></td>
+                <td th:text="${row.role}"></td>
+            </tr>
+        </table>
+    </main>
+    
+</body>
+</html>
